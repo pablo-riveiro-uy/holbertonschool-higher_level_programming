@@ -6,6 +6,7 @@ if number > 0:
 else:
     postive_number = number * -1
     last_digit = postive_number % 10
+    last_digit *= -1
 if last_digit > 5:
     print(f"Last digit of {number} is {last_digit} and is greater than 5")
 elif last_digit == 0:
