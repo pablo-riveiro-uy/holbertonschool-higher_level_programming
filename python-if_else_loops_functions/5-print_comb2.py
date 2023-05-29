@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 for n in range(0, 100):
     if n < 10:
-        print('0', end='')
-    if n != 99:
-        print(f'{n}, ', end='')
+        print('0{}, '.format(n), end='')
     else:
-        print(n)
+            if n != 99:
+                print('{}, '.format(n), end='')
+            else:
+                print(n)
