@@ -1,4 +1,6 @@
 #!/usr/bin/python3
 def print_list_integer(my_list=[]):
+    stringList = [""]
     for i in my_list:
-        print("{}".format(str(i)))
+        stringList.append(i)
+        print("{}".format(stringList[i]))
