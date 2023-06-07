@@ -5,4 +5,6 @@ def multiply_by_2(a_dictionary):
         for i in a_dictionary:
             new_value = a_dictionary[i] * 2
             new_dict.update({i: new_value})
-    return new_dict
+        return new_dict
+    else:
+        return None
