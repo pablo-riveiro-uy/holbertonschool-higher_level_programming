@@ -16,4 +16,4 @@ def roman_to_int(roman_string):
                 added += nums[i]
         return added
     else:
-        return None
+        return 0
