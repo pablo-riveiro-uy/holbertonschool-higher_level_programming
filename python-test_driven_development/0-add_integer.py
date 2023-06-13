@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-__import__("./test/add_integer.txt")
+""" Module that adds two numbers"""
 def add_integer(a, b=98):
+    """ Add to numbers function"""
     if not isinstance(a, int) and not isinstance(a, float):
         raise TypeError('a must be an integer')
     if not isinstance(b, int) and not isinstance(b, float):
