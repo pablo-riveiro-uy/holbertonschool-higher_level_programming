@@ -1,5 +1,21 @@
 #!/usr/bin/python3
+"""_summary_
+"""
+
+
 def print_square(size):
+    """_summary_
+
+    Args:
+        size (_type_): _description_
+
+    Raises:
+        TypeError: _description_
+        TypeError: _description_
+        ValueError: _description_
+    """
+
+
     if isinstance(size, float) and size < 0:
         raise TypeError('size must be an integer')
     if not isinstance(size, int):
@@ -10,3 +26,4 @@ def print_square(size):
         for j in range(size):
             print("#", end="")
         print()
+    
