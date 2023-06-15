@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """_summary_
     """
-class Rectangle:
+class Rectangle():
     """_summary_
     """
     pass
