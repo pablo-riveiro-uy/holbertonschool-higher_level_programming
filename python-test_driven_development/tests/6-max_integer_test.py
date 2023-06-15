@@ -17,3 +17,5 @@ class TestMaxInteger(unittest.TestCase):
     def test_empty_list(self):
         self.assertAlmostEqual(max_integer([]), None)
     
+if __name__ == "__main__":
+    unittest.main()
