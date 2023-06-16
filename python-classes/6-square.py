@@ -40,7 +40,7 @@ class Square:
     def my_print(self):
         """ Printing the sqare on size given"""
         if self.__size == 0:
-            print("")
+            print()
         else:
             spaces = self.position[1]
             while spaces > 0:
