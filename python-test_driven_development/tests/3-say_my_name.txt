@@ -13,7 +13,7 @@ My name is Walter White
 ::
 
 >>> say_my_name("Bob")
-first_name must be a string
+My name is Bob
 
 ::
 
