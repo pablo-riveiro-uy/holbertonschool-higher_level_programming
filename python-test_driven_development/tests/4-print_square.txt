@@ -18,5 +18,15 @@ TypeError: print_square() missing 1 required positional argument: 'size'
 
 ::
 
+>>> print_square(None)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+::
+
+>>> print_square(2.8)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
 
 
