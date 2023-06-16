@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""_summary_
+	"""
 matrix_divided = __import__('2-matrix_divided').matrix_divided
 
 matrix = [
