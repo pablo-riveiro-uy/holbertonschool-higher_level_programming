@@ -2,7 +2,6 @@
 
 ::
 
-
 >>> say_my_name("John", "Smith")
 My name is John Smith
 
@@ -14,7 +13,7 @@ My name is Walter White
 ::
 
 >>> say_my_name("Bob")
-first_name must be a string$
+first_name must be a string
 
 ::
 
