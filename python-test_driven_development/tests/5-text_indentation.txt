@@ -12,3 +12,9 @@ TypeError: text_indentation() missing 1 required positional argument: 'text'
 >>> text_indentation(5467)
 Traceback (most recent call last):
 TypeError: text must be a string
+
+::
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
