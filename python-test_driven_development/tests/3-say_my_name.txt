@@ -17,9 +17,6 @@ My name is Bob
 
 ::
 
-
-::
-
 >>> say_my_name(521, "Smith")
 Traceback (most recent call last):
 TypeError: first_name must be a string
@@ -37,17 +34,6 @@ TypeError: say_my_name() missing 1 required positional argument: 'first_name'
 
 ::
 
->>> say_my_name(1,2)
-Traceback (most recent call last):
-TypeError: first_name must be a string
-
-::
-
->>> say_my_name(None, "hola")
-Traceback (most recent call last):
-TypeError: first_name must be a string
-
-::
 
 >>> say_my_name(None)
 Traceback (most recent call last):
