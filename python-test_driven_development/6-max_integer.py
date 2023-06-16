@@ -12,7 +12,7 @@ def max_integer(list=[]):
     result = list[0]
     i = 1
     while i < len(list):
-        if not isinstance(list[i], int):
+        if not isinstance(list[0], int):
             raise TypeError('list must bo just with int numbers')
         if list[i] > result:
             result = list[i]
