@@ -4,4 +4,6 @@
 
 
 class BaseGeometry:
+    """_summary_
+    """
     pass
