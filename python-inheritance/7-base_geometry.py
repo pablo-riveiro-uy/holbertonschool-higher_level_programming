@@ -3,7 +3,7 @@
 
     Raises:
         Exception: _description_
-    """
+"""
 
 
 class BaseGeometry():

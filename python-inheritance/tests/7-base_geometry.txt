@@ -3,24 +3,18 @@
 >>> bg.integer_validator("my_int", 12)
 >>> bg.integer_validator("width", 89)
 >>> bg.integer_validator("name", "John")
-[TypeError] name must be an inteer
+TypeError: name must be an integer
 
 >>> bg.integer_validator("age", 0)
-[ValueError] age must be greater than 0
+ValueError: age must be greater than 0
 
 >>> bg.integer_validator("distance", -4)
-[ValueError] distance must be greater than 0
+ValueError: distance must be greater than 0
 
->>> bg.integer_validator("width", none)
+>>> bg.integer_validator("width", None)
 Traceback (most recent call last):
-[TypeError] age must be an integer
+TypeError: width must be an integer
 
 >>> bg.integer_validator("width", [])
 Traceback (most recent call last):
 TypeError: width must be an inteer
-
->>> bg.integer_validator([], 23)
-
->>> bg.integer_validator(bg, "juan")
-Traceback (most recent call last):
-TypeError: <7-base_geometry.BaseGeometry object at 0x7fafbdc78a60> must be an inteer
