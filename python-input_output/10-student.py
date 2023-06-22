@@ -42,5 +42,8 @@ class Student:
         keys = list(data.keys())
 
         keys.sort()
-        sorted_dict = {i: data[i] for i in keys}
+        sorted_dict = {}
+        for key in keys:
+            sorted_dict.update({key: data[key]})
+
         return sorted_dict
