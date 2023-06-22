@@ -49,12 +49,5 @@ class Student:
         return sorted_dict
 
     def reload_from_json(self, json):
-        self.json = json
-        keys = list(json.keys())
-        for key in keys:
-            if key == "first_name":
-                self.first_name = json[key]
-            elif key == "last_name":
-                self.last_name = json[key]
-            elif key == "age":
-                self.age = json[key]
+        for j in json:
+            self.__dict__[j] = json[j]
