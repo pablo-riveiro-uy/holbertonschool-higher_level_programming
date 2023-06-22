@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""_summary_"""
+"""add items to a list and save it in a json File"""
 
 from sys import argv
 
