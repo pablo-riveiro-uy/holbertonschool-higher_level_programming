@@ -93,7 +93,8 @@ class Rectangle(Base):
         return txt.format(self.id, self.x, self.y, self.__width, self.__height)
 
     def update(self, *args):
-        data = ["id", "width", "height", 'x', 'y']
+        """_summary_
+        """
         if args:
             if len(args) >= 1:
                 self.id = args[0]
