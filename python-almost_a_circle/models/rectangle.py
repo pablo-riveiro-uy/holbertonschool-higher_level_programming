@@ -73,11 +73,21 @@ class Rectangle(Base):
     def display(self):
         """_summary_
         """
+        if self.y > 0:
+            for yspace in range(self.y):
+                print()
         for y in range(self.__height):
+            for xspace in range(self.__x):
+                print(' ', end="")
             for x in range(self.__width):
                 print('#', end="")
             print()
 
     def __str__(self):
+        """_summary_
+
+        Returns:
+            _type_: _description_
+        """
         txt = "[Rectangle] ({}) {}/{} - {}/{}"
         return txt.format(self.id, self.x, self.y, self.__width, self.__height)
