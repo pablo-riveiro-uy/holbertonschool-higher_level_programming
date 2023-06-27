@@ -51,6 +51,7 @@ class Base:
                 f.write(Base.to_json_string(to_dict))
 
     def from_json_string(json_string):
+        """_summary_ """
         if json_string is None:
             return []
         else:
