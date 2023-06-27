@@ -35,7 +35,7 @@ class Base:
 
         cls.list_objs = list_objs
 
-        if list_objs is None:
+        if not list_objs or len(list_objs) == 0:
             with open("emptylist.json", 'w') as f:
                 f.write(Base.to_json_string([]))
             return
@@ -52,7 +52,22 @@ class Base:
 
     def from_json_string(json_string):
         """_summary_ """
-        if json_string is None:
+        if not json_string or len(json_string) == 0:
             return []
         else:
             return json_string
+
+    @classmethod
+    def create(cls, **dictionary):
+        cls.dictionary = dictionary
+        from models.rectangle import Rectangle
+        """_summary_"""
+        class Dummy(Rectangle):
+            """_summary_
+            """
+
+        my_dummy = Dummy(1, 1)
+        my_dummy.update(dictionary.get("id"), dictionary.get("width"),
+                        dictionary.get("height"),
+                        dictionary.get('x'), dictionary.get('y'))
+        return my_dummy
