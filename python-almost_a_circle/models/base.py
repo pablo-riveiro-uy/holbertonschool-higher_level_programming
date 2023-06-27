@@ -35,7 +35,7 @@ class Base:
 
         cls.list_objs = list_objs
 
-        if not list_objs:
+        if list_objs is None:
             with open("emptylist.json", 'w') as f:
                 f.write(Base.to_json_string([]))
             return
@@ -49,3 +49,9 @@ class Base:
             for obj in list_objs:
                 to_dict = obj.to_dictionary()
                 f.write(Base.to_json_string(to_dict))
+
+    def from_json_string(json_string):
+        if json_string is None:
+            return []
+        else:
+            return list(json_string)
