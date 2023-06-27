@@ -36,7 +36,8 @@ class Base:
         cls.list_objs = list_objs
 
         if not list_objs:
-            list_objs.append([])
+            with open("emptylist.json", 'w') as f:
+                f.write(Base.to_json_string([]))
 
         if type(list_objs[0] == "Rectangle"):
             filename = "Rectangle.json"
