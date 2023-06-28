@@ -53,7 +53,7 @@ class Base:
     def from_json_string(json_string):
         """_summary_ """
         if not json_string or len(json_string) == 0:
-            return []
+            return "[]"
         else:
             return json_string
 
