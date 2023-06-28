@@ -62,12 +62,29 @@ class Base:
         cls.dictionary = dictionary
         from models.rectangle import Rectangle
         """_summary_"""
-        class Dummy(Rectangle):
-            """_summary_
-            """
 
-        my_dummy = Dummy(1, 1)
-        my_dummy.update(dictionary.get("id"), dictionary.get("width"),
-                        dictionary.get("height"),
-                        dictionary.get('x'), dictionary.get('y'))
-        return my_dummy
+        dummy = cls(1, 1) if cls.__name__ == "Rectangle" else cls(1)
+        dummy.update(**dictionary)
+        return dummy
+    
+    @classmethod
+    def load_from_file(cls):
+        import ast
+        filename  = cls.__name__ + '.json'
+
+        print(filename)
+        my_list = []
+        try:
+            with open(filename, "r") as f:
+                jData = f.read()
+                dictData = ast.literal_eval(jData)
+                for item in jData.items():
+                    dictData.append(cls.from_json_string(item))
+                
+                dummy = cls
+                
+
+                my_list.append(dummy)
+        except FileNotFoundError:
+            return []
+        return my_list
