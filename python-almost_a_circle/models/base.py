@@ -25,43 +25,41 @@ class Base:
     def to_json_string(list_dictionaries):
         """ _summary_ """
         if not list_dictionaries or len(list_dictionaries) == 0:
-            return "[]"
-        else:
-            return json.dumps(list_dictionaries)
+            list_dictionaries = []
+
+        return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
         """_summary_ """
 
-        cls.list_objs = list_objs
-
         if not list_objs or len(list_objs) == 0:
-            with open("emptylist.json", 'w') as f:
-                f.write(Base.to_json_string([]))
-            return
+            list_objs = []
 
-        if type(list_objs[0] == "Rectangle"):
-            filename = "Rectangle.json"
-        else:
-            filename = "Square.json"
+        filename = "Rectangle.json" if cls.__name__ == "Rectangle" else "Square.json"
+
+        a_list = []
+
+        for obj in list_objs:
+            a_list.append(obj.to_dictionary())
+        
 
         with open(filename, 'w') as f:
-            for obj in list_objs:
-                to_dict = obj.to_dictionary()
-                f.write(Base.to_json_string(to_dict))
-
+            a_string = Base.to_json_string(a_list)
+            f.write(a_string)
+    
+    @staticmethod
     def from_json_string(json_string):
         """_summary_ """
-        if not json_string or len(json_string) == 0:
-            return "[]"
+        if not json_string:
+            return []
         else:
-            return json_string
+            return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
-        cls.dictionary = dictionary
-        from models.rectangle import Rectangle
         """_summary_"""
+        cls.dictionary = dictionary
 
         dummy = cls(1, 1) if cls.__name__ == "Rectangle" else cls(1)
         dummy.update(**dictionary)
@@ -69,22 +67,23 @@ class Base:
     
     @classmethod
     def load_from_file(cls):
-        import ast
+        """_summary_
+
+        Returns:
+            _type_: _description_
+        """
         filename  = cls.__name__ + '.json'
 
-        print(filename)
         my_list = []
         try:
-            with open(filename, "r") as f:
-                jData = f.read()
-                dictData = ast.literal_eval(jData)
-                for item in jData.items():
-                    dictData.append(cls.from_json_string(item))
-                
-                dummy = cls
-                
-
-                my_list.append(dummy)
+            with open(filename, 'r') as f:
+                data = f.read()
         except FileNotFoundError:
             return []
+        
+        strgDAta = cls.from_json_string(data)
+
+        for instance in range(len(strgDAta)):
+            my_list.append(cls.create(**strgDAta[instance]))
+
         return my_list
