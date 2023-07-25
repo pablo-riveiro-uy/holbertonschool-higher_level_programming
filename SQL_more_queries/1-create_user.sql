@@ -8,3 +8,5 @@ ALTER USER 'user_0d_1'@'localhost' IDENTIFIED WITH mysql_native_password BY 'use
 
 
 GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost';
+
+FLUSH PRIVILEGES;
