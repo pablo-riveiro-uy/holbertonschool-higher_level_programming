@@ -11,7 +11,8 @@ if __name__ == '__main__':
     info = db.cursor()
 
     info.execute(
-        "SELECT cities.name FROM cities INNER JOIN states ON states.id = cities.state_id\
+        "SELECT cities.name FROM cities \
+            INNER JOIN states ON states.id = cities.state_id\
              WHERE states.name = %s ORDER BY cities.id ASC", (argv[4],))
     output = ""
     for cities in info.fetchall():
