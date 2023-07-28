@@ -14,6 +14,6 @@ if __name__ == '__main__':
 
     for states in info.fetchall():
         if states[1] == argv[4]:
-            print(states)
+            print("({}, '{}')".format(states[0], states[1]))
 
     db.close()
