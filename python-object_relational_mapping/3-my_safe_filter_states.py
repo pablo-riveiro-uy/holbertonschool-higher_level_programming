@@ -10,7 +10,7 @@ if __name__ == '__main__':
 
     info = db.cursor()
 
-    info.execute("SELECT * FROM states ORDER BY states.id ASC ")
+    info.execute("SELECT * FROM states ORDER BY states.id ASC")
 
     for states in info.fetchall():
         if states[1] == argv[4]:
