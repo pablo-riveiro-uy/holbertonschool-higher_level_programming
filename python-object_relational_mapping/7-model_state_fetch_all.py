@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" lists from a table using SQLAlchemy """
+""" lists all elements of two columns   """
 from model_state import Base, State
 from sys import argv
 from sqlalchemy.orm import sessionmaker

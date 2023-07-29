@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-""" lists first element of a column """
+""" lists elements that contains an 'a'   """
 from model_state import Base, State
 from sys import argv
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
-from sqlalchemy.orm import Session
 
 
 if __name__ == "__main__":
@@ -13,10 +12,8 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    result = session.query(State).first()
+    result = session.query(State).all()
 
-    if result:
-        print("{}: {}".format(1, str(result)))
-    else:
-        print("Nothing")
-
+    for row in result:
+        if 'a' in row.name:
+            print("{}: {}".format(row.id, row.name))
