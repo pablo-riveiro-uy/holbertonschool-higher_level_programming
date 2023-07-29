@@ -21,4 +21,4 @@ if __name__ == "__main__":
             print("{}".format(row.id))
 
     if found == 0:
-        print("Not Found")
+        print("Not found")
