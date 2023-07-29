@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" lists add a new State """
+""" Update a State data   """
 from model_state import Base, State
 from sys import argv
 from sqlalchemy.orm import sessionmaker
@@ -12,13 +12,9 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    Louisiana = State(name="Louisiana")
-    session.add(Louisiana)
 
-    query = session.query(State).all()
-
-    for row in query:
-        if row.name == 'Louisiana':
-            print("{}".format(row.id))
+    for row in session.query(State).all():
+        if row.id == 2:
+            row.name = "New Maxico"
 
     session.commit()
