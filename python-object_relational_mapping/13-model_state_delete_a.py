@@ -18,5 +18,5 @@ if __name__ == "__main__":
     for row in query_all:
         if 'a' in row.name:
             session.query(State).filter(State.id == row.id).delete()
-    
+
     session.commit()
