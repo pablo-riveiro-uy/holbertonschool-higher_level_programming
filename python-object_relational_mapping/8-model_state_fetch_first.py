@@ -7,11 +7,9 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
 
-
 if __name__ == "__main__":
     engine = create_engine(
         "mysql+mysqldb://{}:{}@localhost/{}".format(argv[1], argv[2], argv[3]))
-
 
     Session = sessionmaker(bind=engine)
     session = Session()
@@ -21,4 +19,3 @@ if __name__ == "__main__":
         print("{}: {}".format(1, str(result)))
     else:
         print("Nothing")
-
