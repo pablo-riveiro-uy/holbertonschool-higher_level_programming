@@ -15,6 +15,6 @@ if __name__ == "__main__":
 
     for row in session.query(State).all():
         if row.id == 2:
-            row.name = "New Maxico"
+            row.name = "New Mexico"
 
     session.commit()
